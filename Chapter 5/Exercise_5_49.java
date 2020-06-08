@@ -13,25 +13,30 @@ public class Exercise_5_49 {
 		System.out.println("Enter a word");
 		String word = input.nextLine();
 		word = word.toUpperCase();
-		while word.< word.length()
+		int position = 0;
+		System.out.println(position);
+		while (position < word.length()) {
+			char letter = word.charAt(position);
+			
+			if (letter == 'A') {
+				vowel++;
+		}
+			else if (letter == 'E') {
+				vowel++;
+			}
+			else if (letter == 'I') {
+				vowel++;
+			}
+			else if (letter == 'O') {
+				vowel++;
+			}
+			else if (letter == 'U') {
+				vowel++;
+			}
+		position++;
+		}
 		int consonant = (word.length() - vowel);
-		if (word.indexOf("A") >= 0) {
-			vowel += (word.indexOf("A") + 1);
-		}
-		if (word.indexOf("E") >= 0) {
-			vowel++;
-		}
-		if (word.indexOf("I") >= 0) {
-			vowel++;
-		}
-		if (word.indexOf("O") >= 0) {
-			vowel++;
-		}
-		if (word.indexOf("U") >= 0) {
-			vowel++;
-		}
 		System.out.println("consonants : " + consonant);
 		System.out.println("vowels : " + vowel);
 	}
-
 }
