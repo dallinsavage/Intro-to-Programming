@@ -1,26 +1,33 @@
- /*Dallin Savage
-  * 6/5/20
-  * Divisible  by 5 of 6 but not both
-  */
+/*Dallin Savage
+ * 6/9/20
+ * n by n matrix
+ */
+import java.util.Scanner;
 
-public class Exercise_5_11 {
+public class Exercise_6_17 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int x = 100;
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter n");
+		int n = input.nextInt();
 		int counter = 0;
-		while (x >= 100 && x <= 200) {
-			if (x % 5 == 0 ^ x % 6 == 0) {
-					System.out.printf("%d ", x);
-					counter++;
+		int counterl = 0;	
+			while (counterl < n) {
+				int random = (int) (Math.random() * 10);
+				if (random >= 5) {
+					random = 1;
 				}
-			x++;
-			if (counter == 10) {
-				System.out.printf("\n");
-				counter = 0;
+				else {
+					random = 0;
+				}
+				System.out.printf("%d ", random);
+				counter++;
+				if (counter == n) {
+					System.out.printf("\n");
+					counterl++;
+					counter = 0;
 			}
-			}
-			
 		}
-				
 	}
+}
