@@ -1,3 +1,7 @@
+/*Dallin Savage
+ * 6/10/20
+ * format a number
+ */
 import java.util.Scanner;
 
 public class Exercise_6_37 {
@@ -14,10 +18,11 @@ public class Exercise_6_37 {
 	}
 	
 	public static String format(int number, int width) {
+		String end = Integer.toString(number);
+		int total_length = width - end.length();
 		int counter = 0;
 		String front = "";
-		String end = Integer.toString(number);
-		while (counter < width) {
+		while (counter < total_length) {
 			front = front + "0";
 			counter++;
 		}
