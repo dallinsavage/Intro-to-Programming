@@ -1,3 +1,7 @@
+/* Dallin Savage
+ * 6/18/20
+ * eliminate duplicate numbers from an array
+ */
 import java.util.Scanner;
 
 public class Exercise_7_15 {
@@ -21,45 +25,23 @@ public class Exercise_7_15 {
 	public static int[] eliminateDuplicates(int[] array) {
 		int[] newList = new int[10];
 		for (int i = 0; i < array.length - 1; i++) {
-			int z = 1;
-			int y = 0;
-			if (array[i] != array[z]) {
-				newList[y] = array[i];
-				z++;
+			int counter = 1;
+			int y = i + 1;
+			if (array[i] == array[y]) {
+				counter++;
 				y++;
 			}
 			else {
-				z++;
-			}
-		}
-/*			int x = 1;
-			int counter = 1;
-			if (array[i] == array[x]) {
-				counter++;
-			}
-			for (int y = 0; y < array.length - 1; y++) {
-				if (counter == 1) {
-				newList[y] = array[i];
-			}
-			}
-		}
-		*/
-		/*		for (int i = 0; i < array.length - 2; i++) {
-			int x = 1;
-			for (x = 1; x < array.length - 1; x++) {
-			if (array[i] == array[i + x]) {
-				array[i] = 0;
-			}
-			}
-		}
-		for (int y = 0; y < array.length - 1; y++) {
-			int z = 0;
-			if (array[y] != 0) {
-				newList[z] = array[y];
 				y++;
 			}
-}
-*/
+		if (counter == 1 && y != array.length) {
+				newList[i] = array[i];
+		}
+		else {
+				newList[i] = 0;
+		}
+					
+		}		
 		return newList;
 	}
 
