@@ -18,7 +18,10 @@ public class Exercise_7_15 {
 		int[] finallist = eliminateDuplicates(list);
 		System.out.println("Array without duplicates ");
 		for (int z = 0;  z < finallist.length; z++) {
-			System.out.printf("%d ", finallist[z]);
+			if (finallist[z] != 0) {
+				System.out.printf("%d ", finallist[z]);
+			}
+			
 		}
 	}
 	
@@ -39,6 +42,9 @@ public class Exercise_7_15 {
 		}
 		else {
 				newList[i] = 0;
+		}
+		if (counter != 1 && y == array.length) {
+			newList[9] = array[9];
 		}
 					
 		}		
