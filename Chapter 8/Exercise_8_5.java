@@ -1,3 +1,8 @@
+/*Dallin Savage
+ * 6/22/20
+ * sum of two matrices
+ */
+
 import java.util.Scanner;
 
 public class Exercise_8_5 {
@@ -19,9 +24,24 @@ public class Exercise_8_5 {
 				matrixB[row][column] = input.nextDouble();
 			}
 		}
+		double matrixSum[][] = addMatrix(matrixA, matrixB);
+		System.out.println("The sum of the matrices is:");
+		for (int x = 0; x < matrixSum.length; x++) {
+			for (int i = 0; i < matrixSum.length; i++) {
+				System.out.print(matrixSum[x][i] + " ");
+			}
+			System.out.println("\n");
+		}
+	}
+			
 	public static double[][] addMatrix(double[][] a, double[][] b) {
-		
+		double[][] matrixC = new double [3][3];
+		for (int x = 0; x < matrixC.length; x++) {
+			for (int i = 0; i < matrixC.length; i++) {
+				matrixC[i][x] = a[i][x] + b[i][x];
+			}
+		}
+		return matrixC;
 	}
 
-}
 }
