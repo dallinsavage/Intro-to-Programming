@@ -43,7 +43,46 @@ class Mod5ExamPart1 {
 	 *         Number of F's: 8
 	 */
 	public static void printExam() {
+		System.out.println("Enter scores");
+		Scanner input = new Scanner(System.in);
+		double score[] = new double[25];
+		double sum = 0;
+		int A = 0;
+		int B = 0;
+		int C = 0;
+		int D = 0;
+		int F = 0;
+		for (int i = 0; i < score.length; i++) {
+			score[i] = input.nextDouble();
+		}
+		for (int x = 0; x < score.length; x++) {
+			sum = sum + score[x];
+		}
+		double average = sum / 25;
 		
+		for (int y = 0; y < score.length; y++) {
+			if (score[y] >= 90.00) {
+				A++;
+			}
+			else if (score[y] >= 80.00) {
+				B++;
+			}
+			else if (score[y] >= 70.00) {
+				C++;
+			}
+			else if (score[y] >= 60.00) {
+				D++;
+			}
+			else {
+				F++;
+			}
+		}
+		System.out.println("Average score: " + average);
+		System.out.println("Number of A's: " + A);
+		System.out.println("Number of B's: " + B);
+		System.out.println("Number of C's: " + C);
+		System.out.println("Number of D's: " + D);
+		System.out.println("Number of F's: " + F);
 	}
 	
 	/*
@@ -93,14 +132,26 @@ class Mod5ExamPart1 {
 		//Enter in attendance for d days making sure the students' attendance is added into their location in the seating chart
 		for (int d = 0; d < days; d++) {
 			System.out.println("\nDay " + (d+1));
+			
 			for (int r = 0; r < att.length; r++) {
 				System.out.print("Enter 5 numbers for row " + r + " (1 = absent, 0 = present): ");
-				for (int c = 0; c < att.length; c++) {
-					
-				}
+					for (int c = 0; c < att.length; c++) {
+						att[r][c] = (input.nextInt() + att[r][c]);
+					}
+				
+				
 			}
+		}
+		for (int r = 0; r < att.length; r++) {
+			System.out.println("\n");
+			for (int c = 0; c < att.length; c++) {
+				System.out.printf("%d  ", att[r][c]);
+
+			}
+				
 		}
 		
 		// Display seating chart showing number of absences
+
 	}
 }
